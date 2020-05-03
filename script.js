@@ -1,10 +1,47 @@
+var nineInput = document.querySelector("#text9");
+//var tenInput = document.querySelector("#text10");
+var signUpButton = document.querySelector("#sign-up");
+var msgDiv = document.querySelector("#msg");
+var userEmailSpan = document.querySelector("#user-email");
+var userPasswordSpan = document.querySelector("#user-password");
+var btn1 = document.querySelector("#btn1");
+
+renderLastRegistered();
+
+
+function renderLastRegistered() {
+  var nine = localStorage.getItem("nine");
+ 
+
+  if (nine === null) {
+    return;
+  }
+
+ nineInput.textContent = nine;
+
+}
+
+btn1.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var nine = document.querySelector("#text9").value;
+
+
+  
+    localStorage.setItem("nine", nine);
+
+    renderLastRegistered();
+  
+});
+
 var time = new Date();
 
 
-/*var currentDay=document.getElementById("#currentDay");
-currentDay=date.getMonth() + " " + date.getDate();
-console.log(currentDay);
-document.write(currentDay);*/
+
+
+
+  
+
 
 var months = ["January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var month=time.getMonth()+1;
@@ -83,9 +120,8 @@ if (hour<9){
 }
 
 console.log(hour);
-var text9 = document.getElementById("#text9").textContent;
 
-console.log(text9);
+
 
 /*var btn1 = $("#btn1");
 btn1.on("click", function() {
